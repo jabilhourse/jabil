@@ -16,39 +16,24 @@
 <script type="text/javascript">
 $(function(){
 	
-	//$(".zxc").click(function(){
-		//alert("曾小晨最帅");
-		
-	    //$(this).parent().parent().find("ul").toggle();//无动画显示隐藏
-	    //$(this).parent().parent().find("ul").fadeToggle();// 透明度变化 淡入淡出    
-	    //$(this).parent().parent().find("ul").slideToggle(); //有个上下滑动动画的展开收起效果  推荐
-//	});
-	
-	/* $(document).on("click", "#zxc", function() {
-		//$(this).parent().parent().find("ul").slideToggle();
-		//$(this).parent().find("ul").slideToggle();
-		if ($("#zxc").parent().parent().find("ul").is(':hidden')) {
-			
-            $("#zxc").parent().parent().find("ul").show({duration: 300});
+	$("li>a").click(function() {
+		debugger;
+		$(this).next().toggle();
+	});
+	/* $('ul>li>a').click(function(){
+	    $(this).next('ul').toggle();
 
-        } else {
-
-            $("#zxc").parent().parent().find("ul").hide({duration: 300});
-
-        }
-	}); */
-	
+	})
+	 */
 	 $.post("${pageContext.request.contextPath}/account/SelectIMMcoreMenu.action",function(objs){
 		 		
-		 
 		 var time="测试";
-		 alert(time);
 		 for(var i=0;i<2;i++){
-			 //debugger;
+			    //debugger;
 			    var str = "";
 			 	str=str+"<li class='menu-list'>"
-			 	str=str+"<a style='cursor: pointer' id='zxc'><i></i>"
-			 	str=str+"<i class='Hui-iconfont'>&#xe6cc;</i>"+time+"</a><ul>"
+			 	str=str+"<a style='cursor: pointer'><i></i>"
+			 	str=str+"<i class='Hui-iconfont'>&#xe6cc;</i>"+time+"</a><ul style='display:none'>"
 				//用到了循环：
 				var temp = "";
 				for(var j=0;j<2;j++){
@@ -58,7 +43,6 @@ $(function(){
 				}
 				str=str+temp;
 				str=str+"</ul></li>"
-				alert(str);
 		 		$("#menu").append(str);
 		 }
 	 })
@@ -71,7 +55,7 @@ $(function(){
 		<div style="float: left">
 			<span style="font-size: 16px; line-height: 45px; padding-left: 20px; color: #fff; width: 100%;">注塑成型系統</span>
 		</div>
-	<%-- 	<div id="ad_setting" class="ad_setting">
+		<div id="ad_setting" class="ad_setting">
 			<a class="ad_setting_a" href="javascript:; "></a>
 			<ul class="dropdown-menu-uu" style="display: none" id="ad_setting_ul">
 				<li class="ad_setting_ul_li" onclick="AdminInfo()">
@@ -94,7 +78,7 @@ $(function(){
 				</li>
 			</ul>
 			<img class="use_xl" src="${pageContext.request.contextPath}/navbar/images/right_menu.png" />
-		</div> --%>
+		</div> 
 	</div>
 	<!--顶部结束-->
 	<!--菜单-->
@@ -108,28 +92,12 @@ $(function(){
                         </span>
                     </div>
 		<ul id="menu">
-			<li class='menu-list'>
-				<a style='cursor: pointer'>
-			<i></i>
-			<i class='Hui-iconfont'>&#xe6cc;</i>
-		测试
-		</a>
-				<ul>
-					<li><a href='/IMM/account/immeqmStatus.jsp' class='menuItem'
-							title='测试'><i></i><i></i><i></i>测试</a></li>
-					<li><a href='/IMM/account/immeqmStatus.jsp' class='menuItem'
-							title='测试'><i></i><i></i><i></i>测试</a></li>
-					<li><a href='/IMM/account/immeqmStatus.jsp' class='menuItem'
-						    title='测试'><i></i><i></i><i></i>测试</a></li>
-				</ul>
-			</li>
-		</ul> 
-		
 			<li class="menu-list">
 				<a style="cursor: pointer" href="${pageContext.request.contextPath}/1.jsp">
 					<i></i><i class="Hui-iconfont">&#xe66b;</i>返回首页
 				</a>
 			</li>
+		</ul>
 	</div>
 	<div class="right-content">
 		<div id="wrap" style="padding-left: 50px; margin-top: 30px"></div>
