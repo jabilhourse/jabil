@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.imm.mapper.IMMcoreMenuMapper">
+ <select id="SelectIMMcoreMenu"  resultType="com.imm.pojo.IMMcoreMenu">
+	select 
+		a.menu_one_id AS menu_one_id,
+		a.menu_one_name AS menu_one_name
+	from IMMcoreMenu a
+</select>
+ <select id="SelectAllcoreMenu"  resultMap="AllcoreMenu">
+	SELECT
+	IMMcoreMenu.menu_one_id,
+	IMMcoreMenu.menu_one_name,
+	IMMcoreMenu.menu_one_action,
+	IMMcoreMenuTwo.menu_two_name,
+	IMMcoreMenuTwo.menu_two_action
+	FROM
+		IMMcoreMenu
+	LEFT JOIN IMMcoreMenuTwo ON IMMcoreMenu.menu_one_id = IMMcoreMenuTwo.menu_one_id
+	
+</select>
+<resultMap type="com.imm.pojo.IMMcoreMenu" id="AllcoreMenu">  
+        <result column="menu_one_id" property="menu_one_id"/>  
+        <result column="menu_one_name" property="menu_one_name"/>  
+        <result column="menu_one_action" property="menu_one_action"/>  
+          
+        <!-- 一对多的关系 -->  
+        <!-- property: 指的是集合属性的值, ofType：指的是集合中元素的类型 -->  
+        <collection property="MenuTwos" ofType="com.imm.pojo.IMMcoreMenuTwo">  
+            <result column="menu_two_name" property="menu_two_name"/>  
+            <result column="menu_two_action" property="menu_two_action"/>  
+        </collection>  
+    </resultMap>  
+</mapper>
