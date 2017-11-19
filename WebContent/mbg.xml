@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+    <commentGenerator>
+  		<property name="suppressAllComments" value="true" />
+	</commentGenerator>
+    <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        connectionURL="jdbc:sqlserver://101.37.80.82:1433;DatabaseName=isi-wx-plastic-db"
+        userId="sa"
+        password="CPCdatabase123!@">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.imm.entity" targetProject=".\src">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="com.imm.mapper"  targetProject=".\src">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.imm.mapper"  targetProject=".\src">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <table  tableName="IMMCoreRole" domainObjectName="CoreRole" >
+    </table>
+  <table  tableName="IMMUser" domainObjectName="User" >
+    </table>
+    <table  tableName="IMMEqpCurPrtNum" domainObjectName="EqpCurPrtNum" >
+    </table>
+    <table  tableName="IMMLoginHistory" domainObjectName="LoginHistory" >
+    </table>
+    <table  tableName="IMMToolUseInfo" domainObjectName="ToolUseInfo" >
+    </table>
+    <table  tableName="IMMEqpDataList" domainObjectName="EqpDataList" >
+    </table>
+    <table  tableName="IMMCoreLoginLog" domainObjectName="CoreLoginLog" >
+    </table>
+    <table  tableName="IMMCoreMenuTwo" domainObjectName="CoreMenuTwo" >
+     
+     </table>
+     <table  tableName="IMMEqpAlarmHistory" domainObjectName="EqpAlarmHistory" >
+    </table>
+    <table  tableName="IMMAlamMailList" domainObjectName="AlamMailList" >
+    </table>
+    <table  tableName="IMMEqpExceptionList" domainObjectName="EqpExceptionList" >
+    </table>
+    <table  tableName="IMMCoreMenu" domainObjectName="CoreMenu" >
+    </table>
+    <table  tableName="IMMPrtConditionList" domainObjectName="PrtConditionList" >
+    </table>
+    <table  tableName="IMMEqpListMgt" domainObjectName="EqpListMgt" >
+    </table>
+    <table  tableName="IMMSysAlarmHistory" domainObjectName="SysAlarmHistory" >
+    </table>
+    <table  tableName="IMMCoreUserLevel" domainObjectName="CoreUserLevel" >
+    </table>
+    <table  tableName="IMMCoresysRole" domainObjectName="CoresysRole" >
+    </table>
+    <table  tableName="IMMSysVer" domainObjectName="SysVer" >
+    </table>
+    <table  tableName="IMMCoreroleMenu" domainObjectName="CoreroleMenu" >
+    </table>
+     <table  tableName="IMMEqpStatus" domainObjectName="EqpStatus" >
+    </table>
+    <table  tableName="IMMEqpPrtNum" domainObjectName="EqpPrtNum" >
+    </table> 
+    <!--  <table  tableName="sysdiagrams" domainObjectName="Diagrams" >
+    </table> -->
+   
+    
+
+  </context>
+</generatorConfiguration>
